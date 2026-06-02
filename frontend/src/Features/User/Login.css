@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe0f0 0%, #fff0d6 40%, #d0f4f0 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+}
+
+.login-bg-emoji {
+  position: absolute;
+  font-size: 18rem;
+  opacity: .05;
+  user-select: none;
+  top: -4rem;
+  right: -4rem;
+}
+
+.login-form {
+  width: min(90vw, 380px);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  padding: 2.6rem 2.2rem 2rem;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(45, 31, 61, .16);
+  border: 1.5px solid rgba(255, 255, 255, .7);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.login-logo {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: .3rem;
+}
+
+.login-form h2 {
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  color: #2d1f3d;
+  font-size: 1.7rem;
+  margin-bottom: .2rem;
+}
+
+.login-sub {
+  text-align: center;
+  color: #8a7ca0;
+  font-size: .85rem;
+  margin-bottom: 1.4rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  margin-bottom: .6rem;
+}
+
+.login-form input {
+  padding: .72rem 1rem;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255, 110, 180, .25);
+  font-family: 'Nunito', sans-serif;
+  font-size: .92rem;
+  color: #2d1f3d;
+  outline: none;
+  transition: border .2s, box-shadow .2s;
+  background: rgba(255,255,255,.7);
+}
+
+.login-form input:focus {
+  border-color: #ff6eb4;
+  box-shadow: 0 0 0 4px rgba(255, 110, 180, .1);
+}
+
+.login-form button {
+  margin-top: .8rem;
+  padding: .82rem;
+  background: linear-gradient(135deg, #ff6eb4, #ff8c69);
+  border: none;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 110, 180, .38);
+  transition: opacity .2s, transform .15s;
+}
+
+.login-form button:hover:not(:disabled) {
+  opacity: .9;
+  transform: translateY(-1px);
+}
+
+.login-form button:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: .8rem;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: .86rem;
+  color: #8a7ca0;
+}
+
+.register-link a {
+  color: #ff6eb4;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-container { padding: 1rem; }
+  .login-form { padding: 1.8rem 1.2rem 1.4rem; }
+  .login-form h2 { font-size: 1.4rem; }
+  .login-bg-emoji { font-size: 10rem; }
+}

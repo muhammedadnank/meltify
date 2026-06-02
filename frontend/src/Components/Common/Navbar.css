@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid rgba(255, 110, 180, 0.15);
+  box-shadow: 0 2px 16px rgba(255, 110, 180, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: 'Nunito', sans-serif;
+}
+
+.nav-logo a {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: #ff6eb4;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2d1f3d;
+  font-weight: 600;
+  font-size: .92rem;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: #ff6eb4;
+}
+
+/* Cart badge */
+.cart-link {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: #ff6eb4;
+  color: #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: .7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Flavour dropdown */
+.category-dropdown {
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: .92rem;
+  color: #2d1f3d;
+  user-select: none;
+}
+
+.category-dropdown span:hover {
+  color: #ff6eb4;
+}
+
+.category-menu {
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(45, 31, 61, .15);
+  border: 1.5px solid rgba(255, 110, 180, .15);
+  min-width: 160px;
+  overflow: hidden;
+  z-index: 200;
+  animation: fadeIn .15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.category-menu a {
+  display: block;
+  padding: .6rem 1.1rem;
+  color: #2d1f3d;
+  text-decoration: none;
+  font-size: .88rem;
+  transition: background .15s;
+}
+
+.category-menu a:hover {
+  background: #fff0f8;
+  color: #ff6eb4;
+}
+
+.active-category {
+  color: #ff6eb4 !important;
+  font-weight: 700 !important;
+  background: #fff0f8 !important;
+}
+
+/* Search */
+.nav-search {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.nav-search input {
+  padding: .45rem .9rem;
+  border-radius: 50px;
+  border: 1.5px solid rgba(255, 110, 180, .3);
+  font-family: 'Nunito', sans-serif;
+  font-size: .88rem;
+  outline: none;
+  background: rgba(255, 255, 255, .7);
+  transition: border .2s;
+  width: 200px;
+}
+
+.nav-search input:focus {
+  border-color: #ff6eb4;
+}
+
+.nav-search button {
+  padding: .45rem 1rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #ff6eb4, #ff8c69);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.nav-search button:hover {
+  opacity: .88;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 0 1rem; gap: .5rem; }
+  .nav-search { display: none; }
+  .nav-links { gap: .7rem; }
+  .nav-logo a { font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  .nav-links { display: none; }
+  .navbar { justify-content: space-between; }
+}

@@ -1,0 +1,104 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 31, 61, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn .2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem 2rem 1.6rem;
+  border-radius: 24px;
+  width: min(90vw, 360px);
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(45, 31, 61, .2);
+  border: 1.5px solid rgba(255, 110, 180, .2);
+  animation: popIn .3s cubic-bezier(.34,1.56,.64,1);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(.9) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-logo {
+  font-size: 2.4rem;
+  margin-bottom: .4rem;
+}
+
+.modal-box h2 {
+  font-family: 'Fredoka One', cursive;
+  color: #2d1f3d;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.modal-box input {
+  width: 100%;
+  margin: .4rem 0;
+  padding: .7rem 1rem;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 110, 180, .25);
+  font-family: 'Nunito', sans-serif;
+  font-size: .9rem;
+  outline: none;
+  transition: border .2s;
+}
+
+.modal-box input:focus {
+  border-color: #ff6eb4;
+}
+
+.modal-box button[type="submit"] {
+  width: 100%;
+  margin-top: .8rem;
+  padding: .75rem;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff6eb4, #ff8c69);
+  color: #fff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 110, 180, .35);
+  transition: opacity .2s;
+}
+
+.modal-box button[type="submit"]:hover {
+  opacity: .88;
+}
+
+.close-btn {
+  margin-top: .7rem;
+  background: none;
+  border: none;
+  color: #8a7ca0;
+  font-size: .85rem;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: underline;
+}
+
+.modal-error {
+  color: #d32f2f;
+  font-size: .83rem;
+  margin-bottom: .6rem;
+}
+
+@media (max-width: 480px) {
+  .modal-box {
+    padding: 1.6rem 1.2rem 1.2rem;
+    border-radius: 18px;
+  }
+  .modal-box h2 { font-size: 1.1rem; }
+}

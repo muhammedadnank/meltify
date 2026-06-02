@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
+
+.product-container {
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #fff8fc 0%, #fffdf5 100%);
+  min-height: calc(100vh - 64px);
+  font-family: 'Nunito', sans-serif;
+}
+
+.search-label {
+  color: #8a7ca0;
+  font-size: .9rem;
+  margin-bottom: 1rem;
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: .6rem;
+  color: #8a7ca0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.loading-emoji {
+  font-size: 3rem;
+  animation: bounce .8s ease infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem;
+  color: #8a7ca0;
+  font-size: 1rem;
+}
+
+.empty-state span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: .6rem;
+}
+
+.product-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.product-card {
+  display: flex;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 1rem;
+  transition: transform .25s, box-shadow .25s;
+  box-shadow: 0 4px 16px rgba(255, 110, 180, .08);
+  border: 1.5px solid rgba(255, 110, 180, .1);
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(255, 110, 180, .16);
+}
+
+/* IMAGE */
+.image-wrapper {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.product-card:hover .image-wrapper img {
+  transform: scale(1.08);
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 50px;
+}
+
+.vegan       { background: #d4f7e8; color: #1b7a4e; top: 8px; }
+.sugar-free  { background: #e8f4e8; color: #2e7a2e; top: 34px; }
+
+/* RIGHT */
+.right-section {
+  flex: 1;
+  padding: .6rem 1rem;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.product-info {
+  flex: 1;
+  padding-right: 1.2rem;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d1f3d;
+  margin-bottom: .2rem;
+}
+
+.product-flavour {
+  font-size: .8rem;
+  color: #8a7ca0;
+  margin-bottom: .5rem;
+  text-transform: capitalize;
+}
+
+/* BUTTON GROUP */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .6rem;
+  flex-shrink: 0;
+}
+
+.button-group button {
+  width: 150px;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff6eb4;
+}
+
+.add-btn, .view-btn {
+  padding: .55rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #ff6eb4, #ff8c69);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 110, 180, .3);
+}
+
+.add-btn:hover:not(:disabled) {
+  opacity: .88;
+  transform: translateY(-1px);
+}
+
+.add-btn:disabled {
+  background: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.view-btn {
+  background: rgba(139, 92, 246, .1);
+  color: #8b5cf6;
+  border: 1.5px solid rgba(139, 92, 246, .2);
+}
+
+.view-btn:hover {
+  background: rgba(139, 92, 246, .18);
+}
+
+/* STOCK */
+.stock-wrapper { margin-top: .4rem; }
+
+.stock-badge {
+  font-size: .75rem;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.stock-high { background: #e6f9ec; color: #1b8a3a; }
+.stock-low  { background: #fff4e5; color: #d97706; }
+.stock-out  { background: #fdecea; color: #d32f2f; }
+
+@media (max-width: 600px) {
+  .product-container { padding: 1rem; }
+  .product-card { flex-direction: column; }
+  .image-wrapper { width: 100%; height: 220px; }
+  .top-row { flex-direction: column; gap: 1rem; }
+  .button-group { width: 100%; align-items: stretch; }
+  .button-group button { width: 100%; }
+}

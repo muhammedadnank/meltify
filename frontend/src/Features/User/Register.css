@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
+
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe0f0 0%, #fff0d6 40%, #d0f4f0 100%);
+  padding: 2rem 1rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.register-form {
+  width: min(96vw, 640px);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  padding: 2.4rem 2.2rem 2rem;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(45, 31, 61, .16);
+  border: 1.5px solid rgba(255, 255, 255, .7);
+}
+
+.register-logo {
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: .3rem;
+}
+
+.register-form h2 {
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  color: #2d1f3d;
+  font-size: 1.7rem;
+  margin-bottom: .2rem;
+}
+
+.register-sub {
+  text-align: center;
+  color: #8a7ca0;
+  font-size: .85rem;
+  margin-bottom: 1.4rem;
+}
+
+.register-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .7rem 1.2rem;
+  margin-bottom: .8rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.register-form input {
+  padding: .7rem 1rem;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255, 110, 180, .25);
+  font-family: 'Nunito', sans-serif;
+  font-size: .9rem;
+  color: #2d1f3d;
+  outline: none;
+  transition: border .2s;
+  background: rgba(255,255,255,.7);
+}
+
+.register-form input:focus {
+  border-color: #ff6eb4;
+  box-shadow: 0 0 0 3px rgba(255,110,180,.1);
+}
+
+/* Role toggle */
+.role-section {
+  margin-bottom: .8rem;
+}
+
+.role-label {
+  font-size: .78rem;
+  font-weight: 700;
+  color: #2d1f3d;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.role-toggle {
+  display: flex;
+  gap: .7rem;
+}
+
+.role-btn {
+  flex: 1;
+  padding: .6rem;
+  border-radius: 14px;
+  border: 1.5px solid rgba(139, 92, 246, .2);
+  background: rgba(255, 255, 255, .5);
+  font-family: 'Nunito', sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+  color: #8a7ca0;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.role-active {
+  background: linear-gradient(135deg, #ff6eb4, #8b5cf6);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(255, 110, 180, .35);
+}
+
+.register-form button[type="submit"] {
+  width: 100%;
+  margin-top: 1rem;
+  padding: .82rem;
+  background: linear-gradient(135deg, #ff6eb4, #ff8c69);
+  border: none;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 110, 180, .38);
+  transition: opacity .2s;
+}
+
+.register-form button[type="submit"]:hover:not(:disabled) {
+  opacity: .9;
+}
+
+.register-form button[type="submit"]:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: .78rem;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: .86rem;
+  color: #8a7ca0;
+}
+
+.login-link a {
+  color: #ff6eb4;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 520px) {
+  .register-container { padding: 1rem; align-items: flex-start; padding-top: 1.5rem; }
+  .register-form { padding: 1.8rem 1.2rem 1.4rem; }
+  .register-grid { grid-template-columns: 1fr; }
+  .register-form h2 { font-size: 1.4rem; }
+  .role-toggle { flex-direction: column; }
+}
